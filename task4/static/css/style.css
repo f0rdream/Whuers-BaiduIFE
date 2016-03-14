@@ -1,18 +1,83 @@
+/*  global declaration starts*/
 body{
     margin: 0;
 }
-.outerContainer1{
-    height: 1000px;
-    vertical-align: middle;
+.outerContainer{
+    margin: 0 auto;
+    width: 960px;
+    height: 500px;
     text-align: center;
+    border: 1px #000 solid;
 }
-.center1{
-    vertical-align: middle;
-    display: inline-block;
+.center{
     width: 400px;
     height: 200px;
     background-color: #CCC;
 }
+.left-top{
+    height: 50px;
+    width: 50px;
+    border-radius: 0 0 100% 0;
+    background-color: #fc0;
+}
+.right-bottom{
+    height: 50px;
+    width: 50px;
+    border-radius: 100% 0 0 0;
+    background-color: #fc0;
+}
+/*  global declaration ends*/
+/*  div1 starts     */
+.center1{
+    vertical-align: middle;
+    display: inline-block;
+}
 .center1 .left-top{
 
 }
+/*  div2 starts    */
+.oContainer2{
+    position: relative;
+}
+.center2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+}
+.center2 .innerContainer{
+    position: relative;
+    height: 100%;
+}
+.center2 .left-top{
+
+}
+.center2 .right-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.oContainer2 .spaceCenter{
+    position: relative;
+    height: 0;
+}
+/*  div2 ends   */
+/*  div3 starts */
+.oContainer3{
+    text-align: center;
+}
+.oContainer3 .spaceMiddle{
+    float: left;
+    height: 50%;
+    width: 100%;
+    margin-bottom: -100px;
+}
+.center3{
+    clear: both;
+    display: inline-block;
+}
+.center3 .right-bottom{
+
+}
+/*  div3 ends   */
