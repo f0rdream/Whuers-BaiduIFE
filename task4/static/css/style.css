@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+.outerContainer1{
+    height: 1000px;
+    vertical-align: middle;
+    text-align: center;
+}
+.center1{
+    vertical-align: middle;
+    display: inline-block;
+    width: 400px;
+    height: 200px;
+    background-color: #CCC;
+}
+.center1 .left-top{
+
+}
