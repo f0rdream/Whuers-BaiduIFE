@@ -28,12 +28,18 @@ body{
 }
 /*  global declaration ends*/
 /*  div1 starts     */
-.center1{
+.oContainer1{
     vertical-align: middle;
-    display: inline-block;
+    line-height: 600px;
 }
-.center1 .left-top{
-
+.center1{
+    display: inline-block;
+    position: relative;
+}
+.center1 .right-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 /*  div2 starts    */
 .oContainer2{
@@ -74,10 +80,13 @@ body{
     margin-bottom: -100px;
 }
 .center3{
-    clear: both;
     display: inline-block;
+    clear: both;
+    position: relative;
 }
 .center3 .right-bottom{
-
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 /*  div3 ends   */
