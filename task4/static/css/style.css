@@ -89,3 +89,17 @@ body{
     bottom: 0;
 }
 /*  div3 ends   */
+/*  div4 starts*/
+.oContainer4{
+    position: relative;
+}
+.center4{
+    margin:auto ;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.center4 .right-bottom{
+    float: right;
+    margin-top: 100px;
+}
+/*  div4 ends*/
