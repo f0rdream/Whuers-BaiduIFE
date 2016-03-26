@@ -18,41 +18,52 @@
     <input id="numberInput">
     <button value="左侧入" onclick="addLeft()">左侧入</button>
     <button value="右侧入" onclick="addRight()">右侧入</button>
-    <button value="左侧出">左侧出</button>
-    <button value="右侧出">右侧出</button>
+    <button value="左侧出" onclick="deleteLeft()">左侧出</button>
+    <button value="右侧出" onclick="deleteRight()">右侧出</button>
     <div class="container">
-
     </div>
     <script>
-            var outer = document.getElementsByClassName("container")[0];
-            if(outer.childNodes){
-                function addLeft(){
-                    var inner = outer.getElementsByTagName("div");
-                    var newThings = document.createElement("div");
-                    var text = document.getElementById("numberInput").value;
-                    if(text && typeof isNaN(text)){
-                        newThings.innerHTML = text;
-                        outer.insertBefore(newThings, inner[0]);
-                    }else{
-                        alert("要输入数字才能插入哦")
-                    }
-                }
-                function addRight(){
-                    var inner = outer.getElementsByTagName("div");
-                    var newThings = document.createElement("div");
-                    var text = document.getElementById("numberInput").value;
-                    if(text && typeof isNaN(text)){
-                        newThings.innerHTML = text;
-                        outer.appendChild(newThings);
-                    }else{
-                        alert("要输入数字才能插入哦")
-                    }
-                }
+        var outer = document.getElementsByClassName("container")[0];
+        var inner = outer.getElementsByTagName("div");
+        function addLeft(){
+            var newThings = document.createElement("div");
+            var text = document.getElementById("numberInput").value;
+            if(text && isNaN(text) === false){
+                newThings.innerHTML = text;
+                outer.insertBefore(newThings, inner[0]);
             }else{
-                function addLeft(){
-
-                }
+                alert("要输入数字才能插入哦");
             }
+        }
+        function addRight(){
+            var newThings = document.createElement("div");
+            var text = document.getElementById("numberInput").value;
+            if(text && isNaN(text) === false){
+                newThings.innerHTML = text;
+                outer.appendChild(newThings);
+            }else{
+                alert("要输入数字才能插入哦");
+            }
+        }
+        function deleteLeft(){
+            var text = inner[0].innerHTML;
+            outer.removeChild(inner[0]);
+            alert(text);
+        }
+        function deleteRight(){
+            var l = inner.length;
+            var text = inner[l - 1].innerHTML;
+            outer.removeChild(inner[l - 1]);
+            alert(text);
+        }
+        for(var j = 0;j < inner.length;j ++){
+            function removeHisSelf(i) {
+                outer.removeChild(inner[i])
+            }
+            inner[j].onclick = removeHisSelf(j);
+            inner[j].onclick = console.log("点击");
+            console.log(j);
+        }
     </script>
 </body>
 </html>
