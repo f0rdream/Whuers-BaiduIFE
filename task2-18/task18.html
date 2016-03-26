@@ -1,46 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Task18</title>
     <style>
-        .divs{
+        .container>div{
+            height: 20px;
+            margin: 5px;
+            padding: 10px;
             background-color: red;
             color: white;
+            float: left;
         }
     </style>
 </head>
 <body>
     <input id="numberInput">
     <button value="左侧入" onclick="addLeft()">左侧入</button>
-    <button value="右侧入">右侧入</button>
+    <button value="右侧入" onclick="addRight()">右侧入</button>
     <button value="左侧出">左侧出</button>
     <button value="右侧出">右侧出</button>
     <div class="container">
+
     </div>
     <script>
-
             var outer = document.getElementsByClassName("container")[0];
             if(outer.childNodes){
                 function addLeft(){
                     var inner = outer.getElementsByTagName("div");
-                    var newElement = document.createElement("div");
-                    var text = document.getElementById("numberInput");
-                    newElement.innerHTML = text.innerHTML;
-                    outer.insertNode(newElement, inner[0]);
+                    var newThings = document.createElement("div");
+                    var text = document.getElementById("numberInput").value;
+                    if(text && typeof isNaN(text)){
+                        newThings.innerHTML = text;
+                        outer.insertBefore(newThings, inner[0]);
+                    }else{
+                        alert("要输入数字才能插入哦")
+                    }
                 }
                 function addRight(){
                     var inner = outer.getElementsByTagName("div");
-                    var newElement = document.createElement("div");
-                    var text = document.getElementById("numberInput");
-                    newElement.innerHTML = text.innerHTML;
-                    outer.insertNode(newElement, inner[inner.length - 1]);
+                    var newThings = document.createElement("div");
+                    var text = document.getElementById("numberInput").value;
+                    if(text && typeof isNaN(text)){
+                        newThings.innerHTML = text;
+                        outer.appendChild(newThings);
+                    }else{
+                        alert("要输入数字才能插入哦")
+                    }
                 }
             }else{
+                function addLeft(){
 
+                }
             }
-
-
     </script>
 </body>
 </html>
