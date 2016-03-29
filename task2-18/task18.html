@@ -56,13 +56,14 @@
             outer.removeChild(inner[l - 1]);
             alert(text);
         }
-        for(var j = 0;j < inner.length;j ++){
+        for(var j = 0;j < 6;j ++){
+            inner[j].onclick = removeHisSelf(j);
+            inner[j].onclick = function(){console.log("点击");};
+            console.log(j);
+            var i = 0;
             function removeHisSelf(i) {
                 outer.removeChild(inner[i])
             }
-            inner[j].onclick = removeHisSelf(j);
-            inner[j].onclick = console.log("点击");
-            console.log(j);
         }
     </script>
 </body>

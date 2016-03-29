@@ -7,13 +7,30 @@
         #inner:after{
             content: "";
         }
+        .inners{
+            background: red;
+            color: white;
+            margin: 10px 20px;
+        }
     </style>
 </head>
 <body>
 <div id="outer">
     <div id="inner">
         <div class="inners">123</div>
+        <div class="inners">123</div>
+        <div class="inners">123</div>
+        <div class="inners">123</div>
+        <div class="inners">123</div>
     </div>
 </div>
+<script>
+    a = document.getElementsByClassName("inners");
+    for(var j = 0;j < a.length;j ++){
+        a[j].onclick = function(){
+            console.log("点击")
+        }
+    }
+</script>
 </body>
 </html>
